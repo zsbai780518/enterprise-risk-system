@@ -1,55 +1,42 @@
-# 企业风险分析系统 - Git 忽略文件
-
-# 依赖目录
-/vendor/
-/node_modules/
-
-# 运行时文件
-/runtime/
-/runtime/*
-!/runtime/.gitkeep
+# 敏感文件
+*.pem
+*.key
+*.crt
+*.env
+.env.local
+.env.production
+config/database.local.php
+config/*.local.php
 
 # 日志文件
 *.log
-logs/
+logs/*
 
-# 缓存文件
-.cache/
-temp/
-tmp/
+# 临时文件
+temp/*
+tmp/*
+runtime/*
+!runtime/.gitkeep
 
-# 配置文件（包含敏感信息）
-backend/config/database.local.php
-frontend/api/config.local.js
-*.env
-.env.local
-
-# 编译产物
-frontend/unpackage/
-frontend/dist/
+# 上传文件
+public/uploads/*
+backend/public/uploads/*
+!public/uploads/.gitkeep
 
 # IDE 配置
 .idea/
 .vscode/
-*.sublime-project
-*.sublime-workspace
+*.sublime-*
 
 # 系统文件
 .DS_Store
 Thumbs.db
-desktop.ini
 
-# 压缩包
-*.zip
-*.tar.gz
-*.rar
+# 编译产物
+frontend/unpackage/
+frontend/dist/
+node_modules/
 
-# 数据库备份（可选，根据需要调整）
-# database/backups/
-
-# 上传文件
-public/uploads/
-backend/public/uploads/
-
-# 会话文件
-runtime/session/
+# 依赖
+vendor/
+!vendor/.gitkeep

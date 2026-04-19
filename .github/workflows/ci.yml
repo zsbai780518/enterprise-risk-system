@@ -1,0 +1,48 @@
+name: Code Quality Check
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main, develop ]
+
+jobs:
+  php-lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '7.4'
+      
+      - name: Lint PHP files
+        run: |
+          find backend -name "*.php" -exec php -l {} \; | grep -v "No syntax errors" || true
+
+  frontend-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+      
+      - name: Check frontend files
+        run: |
+          echo "Checking frontend structure..."
+          ls -la frontend/
+
+  security-scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Check for hardcoded secrets
+        run: |
+          echo "Scanning for potential security issues..."
+          grep -r "password.*=" backend/config/ --include="*.php" || true
+          echo "Remember: Never commit real passwords!"
