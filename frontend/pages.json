@@ -1,0 +1,109 @@
+{
+  "pages": [
+    {
+      "path": "pages/index/index",
+      "style": {
+        "navigationBarTitleText": "首页",
+        "enablePullDownRefresh": true
+      }
+    },
+    {
+      "path": "pages/company/list",
+      "style": {
+        "navigationBarTitleText": "我的企业"
+      }
+    },
+    {
+      "path": "pages/company/detail",
+      "style": {
+        "navigationBarTitleText": "企业详情"
+      }
+    },
+    {
+      "path": "pages/company/search",
+      "style": {
+        "navigationBarTitleText": "搜索企业"
+      }
+    },
+    {
+      "path": "pages/risk/analysis",
+      "style": {
+        "navigationBarTitleText": "风险分析"
+      }
+    },
+    {
+      "path": "pages/risk/list",
+      "style": {
+        "navigationBarTitleText": "风险列表"
+      }
+    },
+    {
+      "path": "pages/report/list",
+      "style": {
+        "navigationBarTitleText": "分析报告"
+      }
+    },
+    {
+      "path": "pages/report/detail",
+      "style": {
+        "navigationBarTitleText": "报告详情"
+      }
+    },
+    {
+      "path": "pages/mine/index",
+      "style": {
+        "navigationBarTitleText": "个人中心"
+      }
+    },
+    {
+      "path": "pages/mine/login",
+      "style": {
+        "navigationBarTitleText": "登录"
+      }
+    },
+    {
+      "path": "pages/mine/register",
+      "style": {
+        "navigationBarTitleText": "注册"
+      }
+    }
+  ],
+  "tabBar": {
+    "color": "#999999",
+    "selectedColor": "#1890ff",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "static/tabbar/home.png",
+        "selectedIconPath": "static/tabbar/home-active.png"
+      },
+      {
+        "pagePath": "pages/company/list",
+        "text": "企业",
+        "iconPath": "static/tabbar/company.png",
+        "selectedIconPath": "static/tabbar/company-active.png"
+      },
+      {
+        "pagePath": "pages/report/list",
+        "text": "报告",
+        "iconPath": "static/tabbar/report.png",
+        "selectedIconPath": "static/tabbar/report-active.png"
+      },
+      {
+        "pagePath": "pages/mine/index",
+        "text": "我的",
+        "iconPath": "static/tabbar/mine.png",
+        "selectedIconPath": "static/tabbar/mine-active.png"
+      }
+    ]
+  },
+  "globalStyle": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "企业风险分析系统",
+    "navigationBarBackgroundColor": "#ffffff",
+    "backgroundColor": "#f5f5f5"
+  }
+}
