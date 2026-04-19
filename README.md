@@ -146,34 +146,83 @@ npm run dev:h5        # H5
 
 ## 📦 V1.0 功能范围 / V1.0 Features
 
-- ✅ 用户注册/登录 User registration/login
-- ✅ 企业数据手动采集（单企业）Manual company data collection
-- ✅ 基础风险分析 Basic risk analysis
-- ✅ 股权结构图生成 Equity structure chart
-- ✅ 简易风险报告 Simple risk report
-- ✅ 用户基础管理 Basic user management
+### 用户管理模块 ✅ User Management
+
+| 功能 | 后端 API | 前端页面 | 状态 |
+|------|----------|----------|------|
+| 手机号注册 | `POST /api/user/register` | `pages/mine/register.vue` | ✅ 完成 |
+| 用户名注册 | `POST /api/user/register` | `pages/mine/register.vue` | ✅ 完成 |
+| 登录 | `POST /api/user/login` | `pages/mine/login.vue` | ✅ 完成 |
+| 退出登录 | `POST /api/user/logout` | `pages/mine/index.vue` | ✅ 完成 |
+| 用户信息 | `GET /api/user/info` | `pages/mine/index.vue` | ✅ 完成 |
+| 个人资料 | `PUT /api/user/profile` | - | ✅ API 完成 |
+| 密码加密 | bcrypt | - | ✅ 完成 |
+| Token 认证 | JWT | - | ✅ 完成 |
+
+### 企业管理模块 ✅ Company Management
+
+| 功能 | 后端 API | 前端页面 | 状态 |
+|------|----------|----------|------|
+| 企业列表 | `GET /api/company/list` | `pages/company/list.vue` | ✅ 完成 |
+| 企业详情 | `GET /api/company/detail` | `pages/company/detail.vue` | ✅ 完成 |
+| 企业搜索 | `POST /api/company/search` | `pages/company/search.vue` | ✅ 完成 |
+| 企业绑定 | `POST /api/company/bind` | - | ✅ 完成 |
+| 企业解绑 | `DELETE /api/company/unbind` | `pages/company/list.vue` | ✅ 完成 |
+
+### 风险分析模块 ✅ Risk Analysis
+
+| 功能 | 后端 API | 前端页面 | 状态 |
+|------|----------|----------|------|
+| 风险分析 | `GET /api/risk/analysis` | `pages/risk/analysis.vue` | ✅ 完成 |
+| 风险列表 | `GET /api/risk/list` | `pages/risk/list.vue` | ✅ 完成 |
+| 风险统计 | `GET /api/risk/statistics` | - | ✅ API 完成 |
+| 风险雷达图 | Canvas 绘图 | `pages/risk/analysis.vue` | ✅ 完成 |
+
+### 报告模块 ✅ Report
+
+| 功能 | 后端 API | 前端页面 | 状态 |
+|------|----------|----------|------|
+| 报告列表 | `GET /api/report/list` | `pages/report/list.vue` | ✅ 完成 |
+| 报告详情 | - | `pages/report/detail.vue` | ✅ 完成 |
+| 报告导出 | - | - | ⏳ 待开发 |
+
+### 可视化图表 ✅ Charts
+
+| 功能 | 后端 API | 状态 |
+|------|----------|------|
+| 股权结构图 | `GET /api/chart/equity` | ✅ 完成 |
+| 风险地图 | `GET /api/chart/risk` | ✅ 完成 |
+| 资质合规图谱 | `GET /api/chart/qualification` | ✅ 完成 |
 
 ## 🔌 数据源对接 / Data Sources (TODO)
 
 | 数据源 Source | 类型 Type | 状态 Status |
 |---------------|-----------|-------------|
-| 天眼查 | API | 待对接 TODO |
-| 国家企业信用信息公示系统 | 公开数据 Public | 待对接 TODO |
-| 信用中国 | API | 待对接 TODO |
-| 裁判文书网 | 公开数据 Public | 待对接 TODO |
-| 商标局 | API | 待对接 TODO |
+| 天眼查 | API | ⏳ 待对接 |
+| 国家企业信用信息公示系统 | 公开数据 Public | ⏳ 待对接 |
+| 信用中国 | API | ⏳ 待对接 |
+| 裁判文书网 | 公开数据 Public | ⏳ 待对接 |
+| 商标局 | API | ⏳ 待对接 |
+
+> 💡 **提示**: 当前版本使用模拟数据演示，对接真实 API 后即可投入使用。
 
 ## 📝 开发计划 / Roadmap
 
+### 已完成 ✅
+
 - [x] Phase 1: 项目初始化与基础架构
-- [ ] Phase 2: 用户管理模块开发
-- [ ] Phase 3: 企业数据采集模块开发
-- [ ] Phase 4: AI 智能分析模块开发
-- [ ] Phase 5: 可视化生成模块开发
-- [ ] Phase 6: 合规报告与路线规划模块
-- [ ] Phase 7: 数据监控与预警模块
-- [ ] Phase 8: 系统管理后台开发
-- [ ] Phase 9: V1.0 版本集成与测试
+- [x] Phase 2: 用户管理模块开发（注册/登录/个人中心）
+- [x] Phase 3: 企业模块开发（列表/详情/搜索）
+- [x] Phase 4: 风险分析模块开发（分析/列表/可视化）
+- [x] Phase 5: 报告模块开发（列表/详情）
+
+### 待开发 📋
+
+- [ ] Phase 6: 数据源 API 对接（天眼查/信用中国等）
+- [ ] Phase 7: 定时采集任务
+- [ ] Phase 8: 报告导出功能（PDF/Word）
+- [ ] Phase 9: 风险预警推送
+- [ ] Phase 10: 系统管理后台
 
 ## 📄 许可证 / License
 
